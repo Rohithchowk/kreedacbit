@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import HomePage from "./components/HomePage";
-// index.js or App.js
+
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Basketball from "./components/games/Basketball";
 import Cricket from "./components/games/Cricket";

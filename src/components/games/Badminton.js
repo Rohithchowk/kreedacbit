@@ -42,7 +42,7 @@ const Badminton = () => {
       .catch((error) => console.error(error));
 
     axios
-      .get(`http://13.201.93.229:5000/api/auth/sportsItems/name/badminton`)
+      .get(`http://localhost:5000/api/auth/sportsItems/name/badminton`)
       .then((response) => {
         setFootballImage(response.data.image);
       })
