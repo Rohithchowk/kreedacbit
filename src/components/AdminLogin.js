@@ -23,7 +23,8 @@ const AdminLogin = () => {
   const handleLogin = async () => {
     try {
       const response = await fetch(
-        "http://3.110.48.22:5000/api/auth/admin_login",
+        "https://kreedacbit.onrender.com/api/auth/admin_login",
+       
         {
           method: "POST",
           headers: {
