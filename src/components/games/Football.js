@@ -37,12 +37,12 @@ const Football = () => {
 
   useEffect(() => {
     axios
-      .get("http://3.110.48.22:5000/api/auth/getMatches_f")
+      .get("https://kreedacbit.onrender.com/api/auth/getMatches_f")
       .then((response) => setMatches(response.data))
       .catch((error) => console.error(error));
 
     axios
-      .get(`http://3.110.48.22:5000/api/auth/sportsItems/name/football`)
+      .get(`https://kreedacbit.onrender.com/api/auth/sportsItems/name/football`)
       .then((response) => {
         setFootballImage(response.data.image);
       })
@@ -72,7 +72,7 @@ const Football = () => {
       console.log('Request Payload:', { matchId, team, score: newScore });
   
       // Send update request to backend
-      const response = await axios.put(`http://3.110.48.22:5000/api/auth/update-score_f/${matchId}`, {
+      const response = await axios.put(`https://kreedacbit.onrender.com/api/auth/update-score_f/${matchId}`, {
         team,
         score: newScore,
       });
@@ -109,7 +109,7 @@ const Football = () => {
       // Update existing match
       axios
         .put(
-          `http://3.110.48.22:5000/api/auth/updateMatch_f/${selectedMatch._id}`,
+          `https://kreedacbit.onrender.com/api/auth/updateMatch_f/${selectedMatch._id}`,
           {
             teamA: newMatch.teamA,
             teamB: newMatch.teamB,
@@ -135,7 +135,7 @@ const Football = () => {
     } else {
       // Add new match
       axios
-        .post("http://3.110.48.22:5000/api/auth/addMatch_f", {
+        .post("https://kreedacbit.onrender.com/api/auth/addMatch_f", {
           teamA: newMatch.teamA,
           teamB: newMatch.teamB,
           name: `${newMatch.teamA || "Team A"} VS ${
@@ -158,7 +158,7 @@ const Football = () => {
     if (selectedMatch) {
       axios
         .delete(
-          `http://3.110.48.22:5000/api/auth/deleteMatch_f/${selectedMatch._id}`
+          `https://kreedacbit.onrender.com/api/auth/deleteMatch_f/${selectedMatch._id}`
         )
         .then(() => {
           setMatches(
@@ -180,14 +180,14 @@ const Football = () => {
 
     axios
       .get(
-        `http://3.110.48.22:5000/api/auth/getPlayers_f/${match._id}?team=TeamA`
+        `https://kreedacbit.onrender.com/api/auth/getPlayers_f/${match._id}?team=TeamA`
       )
       .then((response) => setPlayersTeamA(response.data))
       .catch((error) => console.error(error));
 
     axios
       .get(
-        `http://3.110.48.22:5000/api/auth/getPlayers_f/${match._id}?team=TeamB`
+        `https://kreedacbit.onrender.com/api/auth/getPlayers_f/${match._id}?team=TeamB`
       )
       .then((response) => setPlayersTeamB(response.data))
       .catch((error) => console.error(error));
@@ -220,7 +220,7 @@ const Football = () => {
     if (selectedMatch) {
       axios
         .post(
-          `http://3.110.48.22:5000/api/auth/addPlayers_f/${selectedMatch._id}`,
+          `https://kreedacbit.onrender.com/api/auth/addPlayers_f/${selectedMatch._id}`,
           {
             ...playerFormData,
             rollNo: parseInt(playerFormData.rollNo), // Parse rollNo to integer
@@ -258,7 +258,7 @@ const Football = () => {
       // Update existing player
       axios
         .put(
-          `http://3.110.48.22:5000/api/auth/updatePlayerDetails_f/${matchId}/${playerId}`,
+          `https://kreedacbit.onrender.com/api/auth/updatePlayerDetails_f/${matchId}/${playerId}`,
           {
             player_name: playerFormData.player_name,
             roll_no: parseInt(playerFormData.roll_no), // Parse rollNo to integer
@@ -312,7 +312,7 @@ const Football = () => {
 
       axios
         .delete(
-          `http://3.110.48.22:5000/api/auth/deletePlayerDetails_f/${playerId}/${matchId}`
+          `https://kreedacbit.onrender.com/api/auth/deletePlayerDetails_f/${playerId}/${matchId}`
         )
         .then(() => {
           const updatedPlayers =
