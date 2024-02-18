@@ -19,7 +19,11 @@ const Livematches = () => {
   const fetchSportsItems = async () => {
     try {
       const response = await axios.get(
+<<<<<<< HEAD
         "http://3.110.48.22:5000/api/auth/sportsItems_live"
+=======
+        "https://kreedacbit.onrender.com/api/auth/sportsItems_live"
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
       );
       setSportsItems(response.data);
     } catch (error) {
@@ -40,7 +44,11 @@ const Livematches = () => {
       formData.append("image", selectedFile);
 
       await axios.post(
+<<<<<<< HEAD
         "http://3.110.48.22:5000/api/auth/sportsItems_live",
+=======
+        "https://kreedacbit.onrender.com/api/auth/sportsItems_live",
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
         formData
       );
       // After adding the item, fetch the updated list
@@ -58,7 +66,11 @@ const Livematches = () => {
   const handleDeleteItem = async (itemId) => {
     try {
       await axios.delete(
+<<<<<<< HEAD
         `http://3.110.48.22:5000/api/auth/sportsItems_live/${itemId}`
+=======
+        `https://kreedacbit.onrender.com/api/auth/sportsItems_live/${itemId}`
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
       );
       // After deleting the item, fetch the updated list
       fetchSportsItems();

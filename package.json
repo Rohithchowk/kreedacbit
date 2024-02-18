@@ -1,7 +1,11 @@
 {
   "name": "frontend",
   "version": "0.1.0",
+<<<<<<< HEAD
   "proxy": "http://3.110.48.22:5000",
+=======
+  "proxy": "https://kreedacbit.onrender.com",
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",

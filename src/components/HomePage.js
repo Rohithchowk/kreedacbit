@@ -2,6 +2,10 @@ import React from "react";
 import NavbarPage from "./NavbarPage";
 import Images from "./Images";
 import KreedaSection from "./KreedaSection";
+<<<<<<< HEAD
+=======
+import TodayMatchesList from "./TodayMatchesList";
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
 //import Winners from "./Winners";
 
 import ClubMembers from "./ClubMembers";
@@ -14,6 +18,10 @@ function HomePage() {
       <Images />
       <KreedaSection />
       {/* <Livematches/> */}
+<<<<<<< HEAD
+=======
+      <TodayMatchesList />
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
       {/* <Winners/> */}
       <ClubMembers />
       {/* Follow Us Section */}

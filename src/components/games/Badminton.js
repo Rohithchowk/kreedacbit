@@ -37,12 +37,20 @@ const Badminton = () => {
 
   useEffect(() => {
     axios
+<<<<<<< HEAD
       .get("http://3.110.48.22:5000/api/auth/getMatches_Bad")
+=======
+      .get("https://kreedacbit.onrender.com/api/auth/getMatches_Bad")
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
       .then((response) => setMatches(response.data))
       .catch((error) => console.error(error));
 
     axios
+<<<<<<< HEAD
       .get(`http://3.110.48.22:5000/api/auth/sportsItems/name/badminton`)
+=======
+      .get(`https://kreedacbit.onrender.com/api/auth/sportsItems/name/badminton`)
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
       .then((response) => {
         setFootballImage(response.data.image);
       })
@@ -72,7 +80,11 @@ const Badminton = () => {
       console.log('Request Payload:', { matchId, team, score: newScore });
   
       // Send update request to backend
+<<<<<<< HEAD
       const response = await axios.put(`http://3.110.48.22:5000/api/auth/update-score_Bad/${matchId}`, {
+=======
+      const response = await axios.put(`https://kreedacbit.onrender.com/api/auth/update-score_Bad/${matchId}`, {
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
         team,
         score: newScore,
       });
@@ -109,7 +121,11 @@ const Badminton = () => {
       // Update existing match
       axios
         .put(
+<<<<<<< HEAD
           `http://3.110.48.22:5000/api/auth/updateMatch_Bad/${selectedMatch._id}`,
+=======
+          `https://kreedacbit.onrender.com/api/auth/updateMatch_Bad/${selectedMatch._id}`,
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
           {
             teamA: newMatch.teamA,
             teamB: newMatch.teamB,
@@ -135,7 +151,11 @@ const Badminton = () => {
     } else {
       // Add new match
       axios
+<<<<<<< HEAD
         .post("http://3.110.48.22:5000/api/auth/addMatch_Bad", {
+=======
+        .post("https://kreedacbit.onrender.com/api/auth/addMatch_Bad", {
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
           teamA: newMatch.teamA,
           teamB: newMatch.teamB,
           name: `${newMatch.teamA || "Team A"} VS ${
@@ -158,7 +178,11 @@ const Badminton = () => {
     if (selectedMatch) {
       axios
         .delete(
+<<<<<<< HEAD
           `http://3.110.48.22:5000/api/auth/deleteMatch_Bad/${selectedMatch._id}`
+=======
+          `https://kreedacbit.onrender.com/api/auth/deleteMatch_Bad/${selectedMatch._id}`
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
         )
         .then(() => {
           setMatches(
@@ -180,14 +204,22 @@ const Badminton = () => {
 
     axios
       .get(
+<<<<<<< HEAD
         `http://3.110.48.22:5000/api/auth/getPlayers_Bad/${match._id}?team=TeamA`
+=======
+        `https://kreedacbit.onrender.com/api/auth/getPlayers_Bad/${match._id}?team=TeamA`
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
       )
       .then((response) => setPlayersTeamA(response.data))
       .catch((error) => console.error(error));
 
     axios
       .get(
+<<<<<<< HEAD
         `http://3.110.48.22:5000/api/auth/getPlayers_Bad/${match._id}?team=TeamB`
+=======
+        `https://kreedacbit.onrender.com/api/auth/getPlayers_Bad/${match._id}?team=TeamB`
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
       )
       .then((response) => setPlayersTeamB(response.data))
       .catch((error) => console.error(error));
@@ -220,7 +252,11 @@ const Badminton = () => {
     if (selectedMatch) {
       axios
         .post(
+<<<<<<< HEAD
           `http://3.110.48.22:5000/api/auth/addPlayers_Bad/${selectedMatch._id}`,
+=======
+          `https://kreedacbit.onrender.com/api/auth/addPlayers_Bad/${selectedMatch._id}`,
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
           {
             ...playerFormData,
             rollNo: parseInt(playerFormData.rollNo), // Parse rollNo to integer
@@ -258,7 +294,11 @@ const Badminton = () => {
       // Update existing player
       axios
         .put(
+<<<<<<< HEAD
           `http://3.110.48.22:5000/api/auth/updatePlayerDetails_Bad/${matchId}/${playerId}`,
+=======
+          `https://kreedacbit.onrender.com/api/auth/updatePlayerDetails_Bad/${matchId}/${playerId}`,
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
           {
             player_name: playerFormData.player_name,
             roll_no: parseInt(playerFormData.roll_no), // Parse rollNo to integer
@@ -312,7 +352,11 @@ const Badminton = () => {
 
       axios
         .delete(
+<<<<<<< HEAD
           `http://3.110.48.22:5000/api/auth/deletePlayerDetails_Bad/${playerId}/${matchId}`
+=======
+          `https://kreedacbit.onrender.com/api/auth/deletePlayerDetails_Bad/${playerId}/${matchId}`
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
         )
         .then(() => {
           const updatedPlayers =
@@ -438,6 +482,7 @@ const Badminton = () => {
 
       {/* ------------------------------------------------------------------ */}
  {/* Boys Matches */}
+<<<<<<< HEAD
  <div className="table-responsive">
   {/* Boys Matches */}
   <table className="table">
@@ -600,6 +645,155 @@ const Badminton = () => {
       </tr>
     </tbody>
   </table>
+=======
+<div>
+  <h2>Boys Matches</h2>
+  <div className="row">
+    <div className="col-md-4">
+      <h4>Previous</h4>
+      <ul className="list-group">
+        {matches
+          .filter(
+            (match) => match.status === "previous" && match.gender === "boys"
+          )
+          .map((match) => (
+            <li
+              key={match._id}
+              className={`list-group-item ${
+                selectedMatch && selectedMatch._id === match._id
+                  ? "active"
+                  : ""
+              }`}
+              onClick={() => handleRowClick(match)}
+            >
+              {match.name}
+            </li>
+          ))}
+      </ul>
+    </div>
+    <div className="col-md-4">
+      <h4>Today</h4>
+      <ul className="list-group">
+        {matches
+          .filter(
+            (match) =>
+              match.status === "present" && match.gender === "boys"
+          )
+          .map((match) => (
+            <li
+              key={match._id}
+              className={`list-group-item ${
+                selectedMatch && selectedMatch._id === match._id
+                  ? "active"
+                  : ""
+              }`}
+              onClick={() => handleRowClick(match)}
+            >
+              {match.name}
+            </li>
+          ))}
+      </ul>
+    </div>
+    <div className="col-md-4">
+      <h4>Upcoming</h4>
+      <ul className="list-group">
+        {matches
+          .filter(
+            (match) =>
+              match.status === "upcoming" && match.gender === "boys"
+          )
+          .map((match) => (
+            <li
+              key={match._id}
+              className={`list-group-item ${
+                selectedMatch && selectedMatch._id === match._id
+                  ? "active"
+                  : ""
+              }`}
+              onClick={() => handleRowClick(match)}
+            >
+              {match.name}
+            </li>
+          ))}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{/* Girls Matches */}
+<div>
+  <h2>Girls Matches</h2>
+  <div className="row">
+    <div className="col-md-4">
+      <h4>Previous</h4>
+      <ul className="list-group">
+        {matches
+          .filter(
+            (match) => match.status === "previous" && match.gender === "girls"
+          )
+          .map((match) => (
+            <li
+              key={match._id}
+              className={`list-group-item ${
+                selectedMatch && selectedMatch._id === match._id
+                  ? "active"
+                  : ""
+              }`}
+              onClick={() => handleRowClick(match)}
+            >
+              {match.name}
+            </li>
+          ))}
+      </ul>
+    </div>
+    <div className="col-md-4">
+      <h4>Today</h4>
+      <ul className="list-group">
+        {matches
+          .filter(
+            (match) =>
+              match.status === "present" && match.gender === "girls"
+          )
+          .map((match) => (
+            <li
+              key={match._id}
+              className={`list-group-item ${
+                selectedMatch && selectedMatch._id === match._id
+                  ? "active"
+                  : ""
+              }`}
+              onClick={() => handleRowClick(match)}
+            >
+              {match.name}
+            </li>
+          ))}
+      </ul>
+    </div>
+    <div className="col-md-4">
+      <h4>Upcoming</h4>
+      <ul className="list-group">
+        {matches
+          .filter(
+            (match) =>
+              match.status === "upcoming" && match.gender === "girls"
+          )
+          .map((match) => (
+            <li
+              key={match._id}
+              className={`list-group-item ${
+                selectedMatch && selectedMatch._id === match._id
+                  ? "active"
+                  : ""
+              }`}
+              onClick={() => handleRowClick(match)}
+            >
+              {match.name}
+            </li>
+          ))}
+      </ul>
+    </div>
+  </div>
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
 </div>
 
 

@@ -37,12 +37,20 @@ const Carroms = () => {
 
   useEffect(() => {
     axios
+<<<<<<< HEAD
       .get("http://3.110.48.22:5000/api/auth/getMatches_car")
+=======
+      .get("https://kreedacbit.onrender.com/api/auth/getMatches_car")
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
       .then((response) => setMatches(response.data))
       .catch((error) => console.error(error));
 
     axios
+<<<<<<< HEAD
       .get(`http://3.110.48.22:5000/api/auth/sportsItems/name/carroms`)
+=======
+      .get(`https://kreedacbit.onrender.com/api/auth/sportsItems/name/carroms`)
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
       .then((response) => {
         setFootballImage(response.data.image);
       })
@@ -72,7 +80,11 @@ const Carroms = () => {
       console.log('Request Payload:', { matchId, team, score: newScore });
   
       // Send update request to backend
+<<<<<<< HEAD
       const response = await axios.put(`http://3.110.48.22:5000/api/auth/update-score_car/${matchId}`, {
+=======
+      const response = await axios.put(`https://kreedacbit.onrender.com/api/auth/update-score_car/${matchId}`, {
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
         team,
         score: newScore,
       });
@@ -109,7 +121,11 @@ const Carroms = () => {
       // Update existing match
       axios
         .put(
+<<<<<<< HEAD
           `http://3.110.48.22:5000/api/auth/updateMatch_car/${selectedMatch._id}`,
+=======
+          `https://kreedacbit.onrender.com/api/auth/updateMatch_car/${selectedMatch._id}`,
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
           {
             teamA: newMatch.teamA,
             teamB: newMatch.teamB,
@@ -135,7 +151,11 @@ const Carroms = () => {
     } else {
       // Add new match
       axios
+<<<<<<< HEAD
         .post("http://3.110.48.22:5000/api/auth/addMatch_car", {
+=======
+        .post("https://kreedacbit.onrender.com/api/auth/addMatch_car", {
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
           teamA: newMatch.teamA,
           teamB: newMatch.teamB,
           name: `${newMatch.teamA || "Team A"} VS ${
@@ -158,7 +178,11 @@ const Carroms = () => {
     if (selectedMatch) {
       axios
         .delete(
+<<<<<<< HEAD
           `http://3.110.48.22:5000/api/auth/deleteMatch_car/${selectedMatch._id}`
+=======
+          `https://kreedacbit.onrender.com/api/auth/deleteMatch_car/${selectedMatch._id}`
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
         )
         .then(() => {
           setMatches(
@@ -180,14 +204,22 @@ const Carroms = () => {
 
     axios
       .get(
+<<<<<<< HEAD
         `http://3.110.48.22:5000/api/auth/getPlayers_car/${match._id}?team=TeamA`
+=======
+        `https://kreedacbit.onrender.com/api/auth/getPlayers_car/${match._id}?team=TeamA`
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
       )
       .then((response) => setPlayersTeamA(response.data))
       .catch((error) => console.error(error));
 
     axios
       .get(
+<<<<<<< HEAD
         `http://3.110.48.22:5000/api/auth/getPlayers_car/${match._id}?team=TeamB`
+=======
+        `https://kreedacbit.onrender.com/api/auth/getPlayers_car/${match._id}?team=TeamB`
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
       )
       .then((response) => setPlayersTeamB(response.data))
       .catch((error) => console.error(error));
@@ -220,7 +252,11 @@ const Carroms = () => {
     if (selectedMatch) {
       axios
         .post(
+<<<<<<< HEAD
           `http://3.110.48.22:5000/api/auth/addPlayers_car/${selectedMatch._id}`,
+=======
+          `https://kreedacbit.onrender.com/api/auth/addPlayers_car/${selectedMatch._id}`,
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
           {
             ...playerFormData,
             rollNo: parseInt(playerFormData.rollNo), // Parse rollNo to integer
@@ -258,7 +294,11 @@ const Carroms = () => {
       // Update existing player
       axios
         .put(
+<<<<<<< HEAD
           `http://3.110.48.22:5000/api/auth/updatePlayerDetails_car/${matchId}/${playerId}`,
+=======
+          `https://kreedacbit.onrender.com/api/auth/updatePlayerDetails_car/${matchId}/${playerId}`,
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
           {
             player_name: playerFormData.player_name,
             roll_no: parseInt(playerFormData.roll_no), // Parse rollNo to integer
@@ -312,7 +352,11 @@ const Carroms = () => {
 
       axios
         .delete(
+<<<<<<< HEAD
           `http://3.110.48.22:5000/api/auth/deletePlayerDetails_car/${playerId}/${matchId}`
+=======
+          `https://kreedacbit.onrender.com/api/auth/deletePlayerDetails_car/${playerId}/${matchId}`
+>>>>>>> a20fe5b1cae794c9adbbc456feb2c1ff89ca1dbf
         )
         .then(() => {
           const updatedPlayers =
